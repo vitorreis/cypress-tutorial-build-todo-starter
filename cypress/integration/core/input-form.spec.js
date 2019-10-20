@@ -1,13 +1,14 @@
 describe('input-form', () => {
-    it('focus on input when loaded', () => {
-        cy.visit('http://localhost:3030/')
+    beforeEach(() => {
+        cy.visit('/')
+    })
 
+    it('focus on input when loaded', () => {
         cy.focused()
             .should('have.class', 'new-todo')
     })
 
-    it.only('accepts input', () => {
-        cy.visit('http://localhost:3030')
+    it('accepts input', () => {
         const typedText = 'React meetup'
 
         cy.get('[test-id=new-todo]')

@@ -7,5 +7,7 @@ export default props =>
       test-id="new-todo"
       type='text'
       className="new-todo"
+      value = {props.currentTodo}
+      onChange={props.onUpdate}
       placeholder="What needs to be done?"/>
   </form>
